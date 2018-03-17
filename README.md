@@ -24,6 +24,8 @@ has_many :captured_images, comments, likes
 belongs_to :user
 ```
 
+
+
 ### table
 - title
 - catch_copy
