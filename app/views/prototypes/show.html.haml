@@ -8,6 +8,8 @@
         .media-body
           %h4#top-aligned-media.media-heading
             = @prototype.title
+            .btn.btn-edit.btn-sm
+              =link_to "edit", edit_prototype_path(@prototype.id)
           .proto-user
             by
             = link_to "#{@prototype.user.name}", user_path(@prototype.user)
