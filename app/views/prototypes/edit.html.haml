@@ -28,7 +28,7 @@
                     = image.hidden_field :status, value: "sub"
                     - if @sub_image[i].present?
                       = image.hidden_field :id, value: @sub_image[i].id
-                    = image.hidden_field :prototype_id, value: @prototype.id
+                      = image.hidden_field :prototype_id, value: @prototype.id
       .row.proto-description
         .col-md-12
           %h4 Catch Copy

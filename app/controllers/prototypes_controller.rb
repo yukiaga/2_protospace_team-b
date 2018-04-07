@@ -39,7 +39,7 @@ class PrototypesController < ApplicationController
   def update
     for i in 2..7 do
       image_params = prototype_params[:captured_images_attributes]["#{i}"]
-      if CapturedImage.where(id: image_params[:id]).blank? && image_params[:content].present?
+      if CapturedImage.where(id: image_params[:id]).blank? && image_params[:content].present? && image_params[:prototype_id].present?
         @image = CapturedImage.create(image_params)
       end
     end
