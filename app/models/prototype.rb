@@ -3,7 +3,7 @@ class Prototype < ActiveRecord::Base
   has_many :captured_images, dependent: :destroy
   has_many :likes, dependent: :destroy
 
-  accepts_nested_attributes_for :captured_images, reject_if: :reject_sub_images
+  accepts_nested_attributes_for :captured_images, reject_if: :reject_sub_images, allow_destroy: true
 
   validates :title,
             :catch_copy,

@@ -236,6 +236,20 @@ body {
   }
 }
 
+.btn-edit {
+  border: 1px solid #eee;
+  background-color: black;
+  margin-left: 10px;
+  border-radius:5px;
+  a {
+    color: white;
+  }
+  &:hover {
+    border: 1px solid #eee;
+    background: gray;
+  }
+}
+
 input[type="email"],
 input[type="text"],
 input[type="password"],
