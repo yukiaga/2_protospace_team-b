@@ -23,6 +23,7 @@ class Prototype < ActiveRecord::Base
   end
 
   def like_user(user_id)
+    # binding.pry
     likes.find_by(user_id: user_id)
   end
 
