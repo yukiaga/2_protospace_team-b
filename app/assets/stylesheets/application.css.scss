@@ -1,3 +1,13 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "protospace";
+
+.button_to {
+  float: right;
+}
+
+#like-button {
+  background-color: white;
+  padding: 8px 16px 8px 14px;
+}
+
