@@ -31,8 +31,6 @@ class PrototypesController < ApplicationController
     end
   end
 
-  private
-
   def edit
     @main_image = @prototype.captured_images.main.first
     sub_images = @prototype.captured_images.sub
