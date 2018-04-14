@@ -1,0 +1,27 @@
+<% if user_signed_in? %>
+  <% if like %>
+    <%= button_to prototype_like_path(prototype_id: prototype.id, id: like.id), method: :delete, id: "like-button", remote: true do %>
+      <%= image_tag "icon_red_heart.png", :size => '14x14' %>
+      <span class="num">
+       LIKE <%= prototype.likes_count %>
+      </span>
+    <% end %>
+  <% else %>
+    <%= button_to prototype_likes_path(prototype_id: prototype.id), id: "like-button", remote: true do %>
+      <%= image_tag "icon_heart.png", :size => '14x14' %>
+      <span>
+       LIKE <%= prototype.likes_count %>
+      </span>
+    <% end %>
+  <% end %>
+<% else %>
+  <div class= "button_to">
+    <div id= "like-button">
+      <%= image_tag "icon_heart.png", :size => '14x14'%>
+        <span>
+         LIKE <%= prototype.likes_count %>
+        </span>
+    </div>
+  </div>
+<% end %>
+

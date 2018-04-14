@@ -1,5 +1,5 @@
 class PrototypesController < ApplicationController
-  before_action :set_prototype, only: :show
+  before_action :set_prototype, only: [:show, :edit, :update]
 
   def index
     @prototypes = Prototype.all
@@ -20,7 +20,9 @@ class PrototypesController < ApplicationController
   end
 
   def show
+    @like = @prototype.like_user(current_user)
   end
+
 
   def destroy
     prototype = Prototype.find(params[:id])
@@ -31,6 +33,36 @@ class PrototypesController < ApplicationController
 
   private
 
+  def edit
+    @main_image = @prototype.captured_images.main.first
+    sub_images = @prototype.captured_images.sub
+    @prototype.captured_images.build
+    @max = CapturedImage.maximum('id')
+    @main_image.content.cache! unless @main_image.content.blank?
+    i = 0
+    @sub_image = []
+    sub_images.each do |image|
+      @sub_image[i] = image
+      i += 1
+    end
+  end
+
+
+  def update
+    for i in 2..7 do
+      image_params = prototype_params[:captured_images_attributes]["#{i}"]
+      if CapturedImage.where(id: image_params[:id]).blank? && image_params[:content].present? && image_params[:prototype_id].present?
+        @image = CapturedImage.create(image_params)
+      end
+    end
+    if @prototype.user_id == current_user.id
+      @prototype.update(prototype_params)
+    end
+    redirect_to action: 'show'
+    flash[:notice] = "prototype was successfully edited"
+  end
+
+  private
   def set_prototype
     @prototype = Prototype.find(params[:id])
   end
@@ -41,7 +73,7 @@ class PrototypesController < ApplicationController
       :catch_copy,
       :concept,
       :user_id,
-      captured_images_attributes: [:content, :status]
+      captured_images_attributes: [:content, :status, :id, :prototype_id]
     )
   end
 end
