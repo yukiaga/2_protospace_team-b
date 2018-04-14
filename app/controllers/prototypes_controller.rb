@@ -23,6 +23,16 @@ class PrototypesController < ApplicationController
     @like = @prototype.like_user(current_user)
   end
 
+
+  def destroy
+    prototype = Prototype.find(params[:id])
+    if prototype.user_id == current_user.id
+      prototype.destroy
+    end
+  end
+
+  private
+
   def edit
     @main_image = @prototype.captured_images.main.first
     sub_images = @prototype.captured_images.sub
@@ -36,6 +46,7 @@ class PrototypesController < ApplicationController
       i += 1
     end
   end
+
 
   def update
     for i in 2..7 do

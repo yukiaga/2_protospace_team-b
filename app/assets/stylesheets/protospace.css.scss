@@ -649,3 +649,25 @@ body {
   color: #a94442;
 }
 
+/* -- delete botton ------------------------------------ */
+ul{
+  list-style: none;
+  padding-top: 10px;
+  .delete_list{
+    padding: 5px 10px;
+    line-height: 40px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #222;
+    font-style: normal;
+    font-weight: bold;
+    border-radius: 5px;
+  }
+}
+
+
+
+
+
+
+
