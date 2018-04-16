@@ -432,6 +432,7 @@ body {
     height: 500px;
     position: relative;
     margin-bottom: 20px;
+    text-align: center;
 
     input {
       position: absolute;
@@ -444,6 +445,7 @@ body {
       filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
       cursor: pointer;
     }
+
   }
 
   .list-group-item {
@@ -454,6 +456,7 @@ body {
       background: image-url("noimage.png") #fff no-repeat center center;
       height: 200px;
       position: relative;
+      text-align: center;
 
       input {
         position: absolute;
