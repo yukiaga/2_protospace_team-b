@@ -21,9 +21,9 @@
       =render partial: "likes/like", locals: { prototype: @prototype, like: @like}
 
   .row
-    - if user_signed_in? && current_user.id == @prototype.user_id
-      .col-md-9.image-box
-        = image_tag(@prototype.set_main_thumbnail.large, class: 'img-responsive img-size-fix', style: "margin: 0 auto;")
+    .col-md-9.image-box
+      = image_tag(@prototype.set_main_thumbnail.large, class: 'img-responsive img-size-fix', style: "margin: 0 auto;")
+      - if user_signed_in? && current_user.id == @prototype.user_id
         %ul.delete_list
           %li.list
             =link_to "Delete", "/prototypes/#{@prototype.id}", class: "delete_list", method: :delete
