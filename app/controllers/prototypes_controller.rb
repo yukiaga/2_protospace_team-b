@@ -20,6 +20,7 @@ class PrototypesController < ApplicationController
   end
 
   def show
+    @comments = Comment.new(comment_params)
   end
 
   private
@@ -36,5 +37,13 @@ class PrototypesController < ApplicationController
       :user_id,
       captured_images_attributes: [:content, :status]
     )
+  end
+
+  def comment_params
+    params.require(:comment).permit(
+      :comment,
+      :user_id,
+      :prototype_id
+      )
   end
 end

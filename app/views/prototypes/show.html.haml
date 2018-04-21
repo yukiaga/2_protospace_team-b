@@ -37,3 +37,16 @@
           %a{href: "#", class: "btn btn-default"} iPad
         %li
           %a{href: "#", class: "btn btn-default"} wireframe
+  .row.show_all_comments
+    .col-md-3
+      %h4 Comments
+      %li
+        %p
+          comments.comment
+  .row.write_a_comment
+    .col-md-3.text_box
+      = form_for @comments do |f|
+        = f.hidden_field :user_id, value: current_user.id
+        = f.text_field :comment, required: true, autofocus: true,placeholder: "Input comment"
+      .col-md-6.text-center.comment-btn
+        = f.submit "COMMENT", id: "button", class: "btn btn-sm btn-primary btn-block"

@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def show
     @prototypes = @user.prototypes
+    @comments = @user.comments
   end
 
   def edit
