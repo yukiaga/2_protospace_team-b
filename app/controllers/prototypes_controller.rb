@@ -2,7 +2,11 @@ class PrototypesController < ApplicationController
   before_action :set_prototype, only: [:show, :edit, :update]
 
   def index
-    @prototypes = Prototype.order("created_at DESC").page(params[:page]).per(16)
+    if params[:format].to_i == 2
+      @prototypes = Prototype.order("created_at DESC").page(params[:page]).per(16)
+    else
+      @prototypes = Prototype.order("likes_count DESC").page(params[:page]).per(16)
+    end
   end
 
   def new
@@ -32,11 +36,9 @@ class PrototypesController < ApplicationController
   end
 
   def edit
-    @main_image = @prototype.captured_images.main.first
     sub_images = @prototype.captured_images.sub
+    @main_image = @prototype.captured_images.main
     @prototype.captured_images.build
-    @max = CapturedImage.maximum('id')
-    @main_image.content.cache! unless @main_image.content.blank?
     i = 0
     @sub_image = []
     sub_images.each do |image|
@@ -44,7 +46,6 @@ class PrototypesController < ApplicationController
       i += 1
     end
   end
-
 
   def update
     for i in 2..7 do
