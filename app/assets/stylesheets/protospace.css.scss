@@ -434,6 +434,14 @@ body {
     margin-bottom: 20px;
     text-align: center;
 
+    .image-upload-thumbnail {
+    height: 500px;
+    position: relative;
+    margin-bottom: 20px;
+    text-align: center;
+    }
+
+
     input {
       position: absolute;
       left: 0;
@@ -457,6 +465,12 @@ body {
       height: 200px;
       position: relative;
       text-align: center;
+
+      .subimage-upload-thumbnail {
+        height: 200px;
+        position: relative;
+        text-align: center;
+      }
 
       input {
         position: absolute;
