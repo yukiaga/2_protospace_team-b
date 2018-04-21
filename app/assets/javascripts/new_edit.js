@@ -1,9 +1,10 @@
+console.log("");
 $(function(){
   //画像ファイルプレビュー表示のイベント追加 fileを選択時に発火するイベントを登録
   $('form').on('change', 'input[type="file"]', function(e) {
     var file = e.target.files[0],
         reader = new FileReader(),
-        $preview = $(this).parent('div');
+        $preview = $(this).prev('div');
         t = this;
 
     // 画像ファイル以外の場合は何もしない
@@ -21,7 +22,6 @@ $(function(){
                   src: e.target.result,
                   class: $preview.attr('class'),
                   title: file.name,
-                  id: 'uploadedimage'
               }));
       };
     })(file);
