@@ -4,11 +4,11 @@ How it works
 
 ### top
 
-![protospace](https://github.com/yukiaga/2_protospace_team-b/wiki/images/protospace.mp4)
+![protospace](https://github.com/yukiaga/2_protospace_team-b/wiki/images/protospace.gif)
 
 ### post
 
-![protospace](https://github.com/yukiaga/2_protospace_team-b/wiki/images/protospace2.mp4)
+![protospace](https://github.com/yukiaga/2_protospace_team-b/wiki/images/protospace2.gif)
 
 
 Structure of DataBase
