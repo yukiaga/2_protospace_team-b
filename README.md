@@ -1,3 +1,16 @@
+# README
+
+How it works
+
+### top
+
+![protospace](https://github.com/yukiaga/2_protospace_team-b/wiki/images/protospace.mp4)
+
+### post
+
+![protospace](https://github.com/yukiaga/2_protospace_team-b/wiki/images/protospace2.mp4)
+
+
 Structure of DataBase
 
 ## User
